@@ -1,14 +1,7 @@
 package w.model;
 
-import w.dao.Dao;
 import w.dao.DaoFactory;
-import w.dao.DaoPriseMedoc;
 import w.dao.DaoSymptome;
-import w.entities.E_PriseMedicaments;
-import w.entities.E_Symptome;
-
-import java.util.Date;
-import java.util.List;
 
 
 public class Test {
@@ -27,18 +20,21 @@ public class Test {
 //        e_rapportSymptome.setE_symptomes(eSymptomes);
 //        symptomeManager.create(e_rapportSymptome);
 //        symptomeManager.delete(e_rapportSymptome);
-        DaoSymptome symptome = DaoFactory.getDaoFactory(PersistenceType.JSON).getDaoRapportSymptome();
+        DaoSymptome symptome = DaoFactory.getDaoFactory(PersistenceType.JPA).getDaoRapportSymptome();
+        symptome.exportToJson();
+        //  symptome.deleteAll(E_Symptome.class);
         //symptome.findAll(E_Symptome.class);
-        symptome.find(E_Symptome.class,1);
-        /*E_Symptome e_symptome =new E_Symptome();
-        e_symptome.setDate(new Date(12,02,3));
-        e_symptome.setDescription("caca noir");
+        //System.out.println(symptome.find(E_Symptome.class,1));
+        /*E_Symptome e_symptome = new E_Symptome();
+        e_symptome.setDate(new Date(1220227200));
+        e_symptome.setDescription("aaaaaaauuuuuu noir");
         e_symptome.setHeure(12);
-        e_symptome.setId(3);
+        e_symptome.setId(2);
         e_symptome.setNom("Covid");
-        symptome.create(e_symptome);*/
+        // symptome.create(e_symptome);*/
+        //  symptome.update(e_symptome);
         //DaoPriseMedoc daoPriseMedoc = DaoFactory.getDaoFactory(PersistenceType.JPA).getDaoPriseMedoc();
 
         //        List<Date> dates = daoPriseMedoc.consommationMedicament(62425595);
-      }
+    }
 }

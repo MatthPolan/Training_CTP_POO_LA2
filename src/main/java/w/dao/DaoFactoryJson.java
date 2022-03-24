@@ -2,7 +2,7 @@ package w.dao;
 
 import w.JsonDao.JsonDaoSymptome;
 
-public class DaoFactoryJson extends DaoFactory{
+public class DaoFactoryJson extends DaoFactory {
 
     public DaoPriseMedoc getDaoPriseMedoc() {
         return null;

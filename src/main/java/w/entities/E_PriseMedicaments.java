@@ -5,7 +5,6 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.sql.Date;
-import java.util.Objects;
 
 @Entity
 @Data
@@ -31,8 +30,8 @@ public class E_PriseMedicaments {
     private int idMedicament;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_medicament", referencedColumnName = "id",insertable = false, updatable = false)
-    private E_Medicaments e_medicaments ;
+    @JoinColumn(name = "id_medicament", referencedColumnName = "id", insertable = false, updatable = false)
+    private E_Medicaments e_medicaments;
 
     @Override
     public String toString() {

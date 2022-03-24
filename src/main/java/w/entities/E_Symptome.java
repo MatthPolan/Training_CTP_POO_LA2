@@ -3,28 +3,27 @@ package w.entities;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.sql.Date;
-import java.util.Objects;
 
 @Entity
 @Data
 @NoArgsConstructor
 @Table(name = "symptome", schema = "ctp_medicament", catalog = "")
-public class E_Symptome {
+public class E_Symptome extends E_Entity {
     @Basic
     @Column(name = "date", nullable = false)
     private Date date;
     @Basic
     @Column(name = "heure", nullable = false)
-    private Integer heure;
+    private int heure;
     @Basic
     @Column(name = "duree", nullable = true)
-    private Integer duree;
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Id
-    @Column(name = "id", nullable = false)
-    private Integer id;
+    private int duree;
+
     @Basic
     @Column(name = "nom", nullable = false, length = -1)
     private String nom;
@@ -32,6 +31,15 @@ public class E_Symptome {
     @Column(name = "description", nullable = false, length = -1)
     private String description;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    private E_PriseMedicaments id_prise;
+    @Override
+    public String toString() {
+        return "E_Symptome{" +
+                "date=" + date +
+                ", heure=" + heure +
+                ", duree=" + duree +
+                ", nom='" + nom + '\'' +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }
+

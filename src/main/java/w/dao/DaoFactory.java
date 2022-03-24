@@ -8,11 +8,11 @@ public abstract class DaoFactory {
 
     public abstract DaoSymptome getDaoRapportSymptome();
 
-    public static DaoFactory getDaoFactory(PersistenceType type){
-        if(type== PersistenceType.JPA){
+    public static DaoFactory getDaoFactory(PersistenceType type) {
+        if (type == PersistenceType.JPA) {
             return new DaoFactoryJpa();
         }
-        if(type== PersistenceType.JSON){
+        if (type == PersistenceType.JSON) {
             return new DaoFactoryJson();
         }
         throw new IllegalArgumentException("Persistance Type not found");

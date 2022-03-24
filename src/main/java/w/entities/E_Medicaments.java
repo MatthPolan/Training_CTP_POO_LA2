@@ -5,7 +5,6 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
-import java.util.Objects;
 
 @Entity
 @Data
@@ -20,7 +19,7 @@ public class E_Medicaments {
     @Column(name = "id", nullable = false)
     private int id;
 
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "e_medicaments")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "e_medicaments")
     private List<E_PriseMedicaments> medicaments;
 
     @Override
